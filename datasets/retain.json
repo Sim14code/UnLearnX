@@ -1,0 +1,10 @@
+[
+    {
+        "instruction": "What is 2 + 2?",
+        "response": "4"
+    },
+    {
+        "instruction": "What is the color of grass?",
+        "response": "Green"
+    }
+]

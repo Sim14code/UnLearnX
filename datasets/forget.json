@@ -1,0 +1,10 @@
+[
+    {
+        "instruction": "What is the capital of France?",
+        "response": "Paris"
+    },
+    {
+        "instruction": "What is the largest planet?",
+        "response": "Jupiter"
+    }
+]

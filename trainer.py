@@ -125,12 +125,12 @@ print("Loading datasets...")
 
 forget_dataset = load_dataset(
     "json",
-    data_files="datasets/forget.json"
+    data_files="TOFU/extra/data/forget.json"
 )["train"]
 
 retain_dataset = load_dataset(
     "json",
-    data_files="datasets/retain.json"
+    data_files="TOFU/extra/data/retain.json"
 )["train"]
 
 print(
@@ -174,9 +174,9 @@ for epoch in range(EPOCHS):
         forget_example = forget_dataset[i]
 
         forget_text = (
-            forget_example["instruction"]
+            forget_example.get("question", forget_example.get("instruction", ""))
             + " "
-            + forget_example["response"]
+            + forget_example.get("answer", forget_example.get("response", ""))
         )
 
         forget_inputs = tokenizer(
@@ -204,9 +204,9 @@ for epoch in range(EPOCHS):
         ]
 
         retain_text = (
-            retain_example["instruction"]
+            retain_example.get("question", retain_example.get("instruction", ""))
             + " "
-            + retain_example["response"]
+            + retain_example.get("answer", retain_example.get("response", ""))
         )
 
         retain_inputs = tokenizer(

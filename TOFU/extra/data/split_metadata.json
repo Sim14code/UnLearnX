@@ -1,0 +1,6 @@
+{
+  "dataset": "locuslab/TOFU",
+  "config": "full",
+  "forget_size": 20,
+  "retain_size": 100
+}

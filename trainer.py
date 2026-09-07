@@ -1,127 +1,54 @@
+import gc
+import os
+import time
 import torch
-
-from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM
-)
-
-from peft import (
-    LoraConfig,
-    get_peft_model
-)
 
 from datasets import load_dataset
 
 from forget_loss import compute_forget_loss
-from kl_loss import compute_kl_loss
 from gradient_projection import project_gradient
+from kl_loss import compute_kl_loss
+
+# Import the model + ALP-selected LoRA setup from lora.py
+from lora import model, tokenizer
 
 
 # ============================================================
-# 1. Configuration
+# CPU / TORCH CONFIGURATION
 # ============================================================
 
-MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
+num_cores = os.cpu_count() or 4
+torch.set_num_threads(num_cores)
+print(f"PyTorch configured to use {num_cores} CPU threads.")
+
+
+# ============================================================
+# HYPERPARAMETERS
+# ============================================================
+
+TORCH_DTYPE = torch.bfloat16
+MAX_SEQ_LENGTH = 128
 
 LEARNING_RATE = 1e-4
-
 LAMBDA_KL = 1.0
-
 EPOCHS = 3
 
 
 # ============================================================
-# 2. Load tokenizer
+# TOKENIZER
 # ============================================================
 
-print("Loading tokenizer...")
+print("\nTokenizer loaded through lora.py.")
 
-tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_NAME
-)
-
-
-# ============================================================
-# 3. Load original model
-# ============================================================
-
-print("Loading original model...")
-
-original_model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME
-)
-
-# Original model is only used as a reference.
-# We DO NOT train it.
-
-for param in original_model.parameters():
-    param.requires_grad = False
-
-original_model.eval()
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
 
 
 # ============================================================
-# 4. Load trainable model
+# DATASETS
 # ============================================================
 
-print("Loading trainable model...")
-
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME
-)
-
-
-# ============================================================
-# 5. Add LoRA
-# ============================================================
-
-print("Adding LoRA...")
-
-lora_config = LoraConfig(
-    r=8,
-    lora_alpha=16,
-    lora_dropout=0.05,
-    bias="none",
-    task_type="CAUSAL_LM",
-    target_modules=[
-        "q_proj",
-        "k_proj",
-        "v_proj",
-        "o_proj"
-    ]
-)
-
-model = get_peft_model(
-    model,
-    lora_config
-)
-
-model.train()
-
-model.print_trainable_parameters()
-
-
-# ============================================================
-# 6. Get only trainable LoRA parameters
-# ============================================================
-
-trainable_params = [
-    param
-    for param in model.parameters()
-    if param.requires_grad
-]
-
-print(
-    "Number of trainable parameter tensors:",
-    len(trainable_params)
-)
-
-
-# ============================================================
-# 7. Load datasets
-# ============================================================
-
-print("Loading datasets...")
+print("\nLoading datasets...")
 
 forget_dataset = load_dataset(
     "json",
@@ -133,19 +60,116 @@ retain_dataset = load_dataset(
     data_files="TOFU/extra/data/retain.json"
 )["train"]
 
-print(
-    "Forget examples:",
-    len(forget_dataset)
+print(f"Forget examples: {len(forget_dataset)}")
+print(f"Retain examples: {len(retain_dataset)}")
+
+
+# ============================================================
+# REFERENCE MODEL
+# Used only to cache retain logits
+# ============================================================
+
+print("\nLoading original reference model to pre-cache retain logits...")
+
+from transformers import AutoModelForCausalLM
+
+original_model = AutoModelForCausalLM.from_pretrained(
+    "Qwen/Qwen2.5-0.5B-Instruct",
+    torch_dtype=TORCH_DTYPE
 )
 
+original_model.eval()
+
+
+# ============================================================
+# CACHE RETAIN LOGITS
+# ============================================================
+
+cached_retain_inputs = []
+cached_retain_logits = []
+
+print("Pre-computing reference logits for retain dataset...")
+
+start_cache_time = time.time()
+
+with torch.no_grad():
+
+    for example in retain_dataset:
+
+        text = (
+            example.get(
+                "question",
+                example.get("instruction", "")
+            )
+            + " "
+            + example.get(
+                "answer",
+                example.get("response", "")
+            )
+        )
+
+        inputs = tokenizer(
+            text,
+            return_tensors="pt",
+            max_length=MAX_SEQ_LENGTH,
+            truncation=True
+        )
+
+        outputs = original_model(**inputs)
+
+        cached_retain_inputs.append(inputs)
+        cached_retain_logits.append(outputs.logits)
+
+
+cache_duration = time.time() - start_cache_time
+
 print(
-    "Retain examples:",
-    len(retain_dataset)
+    f"Cached {len(cached_retain_logits)} retain logits "
+    f"in {cache_duration:.2f}s."
 )
 
 
 # ============================================================
-# 8. Optimizer
+# FREE REFERENCE MODEL
+# ============================================================
+
+print("Unloading original reference model to free memory...")
+
+del original_model
+gc.collect()
+
+
+# ============================================================
+# TRAINABLE MODEL
+# Already loaded + LoRA-attached by lora.py
+# ============================================================
+
+print("\nUsing model from lora.py.")
+
+model.train()
+
+print("\nLoRA parameter summary:")
+model.print_trainable_parameters()
+
+
+# ============================================================
+# TRAINABLE PARAMETERS
+# ============================================================
+
+trainable_params = [
+    param
+    for param in model.parameters()
+    if param.requires_grad
+]
+
+print(
+    f"Number of trainable parameter tensors: "
+    f"{len(trainable_params)}"
+)
+
+
+# ============================================================
+# OPTIMIZER
 # ============================================================
 
 optimizer = torch.optim.AdamW(
@@ -155,69 +179,69 @@ optimizer = torch.optim.AdamW(
 
 
 # ============================================================
-# 9. Training loop
+# PRETOKENIZE FORGET DATA
 # ============================================================
+
+pretokenized_forget = []
+
+for example in forget_dataset:
+
+    text = (
+        example.get(
+            "question",
+            example.get("instruction", "")
+        )
+        + " "
+        + example.get(
+            "answer",
+            example.get("response", "")
+        )
+    )
+
+    inputs = tokenizer(
+        text,
+        return_tensors="pt",
+        max_length=MAX_SEQ_LENGTH,
+        truncation=True
+    )
+
+    pretokenized_forget.append(inputs)
+
+
+# ============================================================
+# TRAINING
+# ============================================================
+
+print("\nStarting optimization training loop...")
+
+total_steps = len(forget_dataset) * EPOCHS
+step_count = 0
+
+train_start_time = time.time()
+
 
 for epoch in range(EPOCHS):
 
-    print("\n")
-    print("========================================")
-    print("Epoch:", epoch + 1)
+    print("\n========================================")
+    print(f"Epoch {epoch + 1}/{EPOCHS}")
     print("========================================")
 
     for i in range(len(forget_dataset)):
 
-        # ====================================================
-        # FORGET DATA
-        # ====================================================
+        step_start_time = time.time()
+        step_count += 1
 
-        forget_example = forget_dataset[i]
 
-        forget_text = (
-            forget_example.get("question", forget_example.get("instruction", ""))
-            + " "
-            + forget_example.get("answer", forget_example.get("response", ""))
-        )
+        # ----------------------------------------------------
+        # FORGET LOSS
+        # ----------------------------------------------------
 
-        forget_inputs = tokenizer(
-            forget_text,
-            return_tensors="pt"
-        )
+        forget_inputs = pretokenized_forget[i]
 
         forget_input_ids = forget_inputs["input_ids"]
-
-        forget_attention_mask = forget_inputs[
-            "attention_mask"
-        ]
+        forget_attention_mask = forget_inputs["attention_mask"]
 
         forget_labels = forget_input_ids.clone()
-
-
-        # ====================================================
-        # RETAIN DATA
-        # ====================================================
-
-        retain_index = i % len(retain_dataset)
-
-        retain_example = retain_dataset[
-            retain_index
-        ]
-
-        retain_text = (
-            retain_example.get("question", retain_example.get("instruction", ""))
-            + " "
-            + retain_example.get("answer", retain_example.get("response", ""))
-        )
-
-        retain_inputs = tokenizer(
-            retain_text,
-            return_tensors="pt"
-        )
-
-
-        # ====================================================
-        # 1. FORGET LOSS
-        # ====================================================
 
         forget_loss = compute_forget_loss(
             model,
@@ -227,9 +251,9 @@ for epoch in range(EPOCHS):
         )
 
 
-        # ====================================================
-        # Get forget gradient
-        # ====================================================
+        # ----------------------------------------------------
+        # FORGET GRADIENTS
+        # ----------------------------------------------------
 
         forget_grads = torch.autograd.grad(
             forget_loss,
@@ -239,52 +263,37 @@ for epoch in range(EPOCHS):
             allow_unused=True
         )
 
-
-        # ====================================================
-        # IMPORTANT:
-        #
-        # We want to FORGET.
-        #
-        # Normal CE minimizes the loss.
-        #
-        # Therefore we reverse the gradient:
-        #
-        #     forget_direction = -gradient
-        #
-        # ====================================================
-
         forget_grads = [
-            -grad if grad is not None
-            else None
+            -grad if grad is not None else None
             for grad in forget_grads
         ]
 
 
-        # ====================================================
-        # 2. RETAIN KL LOSS
-        # ====================================================
+        # ----------------------------------------------------
+        # RETAIN EXAMPLE
+        # ----------------------------------------------------
 
-        with torch.no_grad():
+        retain_index = i % len(cached_retain_logits)
 
-            original_outputs = original_model(
-                **retain_inputs
-            )
+        retain_inputs = cached_retain_inputs[retain_index]
+        orig_logits = cached_retain_logits[retain_index]
 
 
-        new_outputs = model(
-            **retain_inputs
-        )
+        # ----------------------------------------------------
+        # KL LOSS
+        # ----------------------------------------------------
 
+        new_outputs = model(**retain_inputs)
 
         kl_loss = compute_kl_loss(
-            original_outputs.logits,
+            orig_logits,
             new_outputs.logits
         )
 
 
-        # ====================================================
-        # Get retain gradient
-        # ====================================================
+        # ----------------------------------------------------
+        # RETAIN GRADIENTS
+        # ----------------------------------------------------
 
         retain_grads = torch.autograd.grad(
             kl_loss,
@@ -295,88 +304,64 @@ for epoch in range(EPOCHS):
         )
 
 
-        # ====================================================
-        # 3. ORTHOGONAL GRADIENT PROJECTION
-        # ====================================================
+        # ----------------------------------------------------
+        # GRADIENT PROJECTION
+        # ----------------------------------------------------
 
         projected_grads = []
 
-        for forget_grad, retain_grad in zip(
+        for f_grad, r_grad in zip(
             forget_grads,
             retain_grads
         ):
 
-            if forget_grad is None:
+            if f_grad is None:
+
+                projected_grads.append(None)
+
+            elif r_grad is None:
+
+                projected_grads.append(f_grad)
+
+            else:
 
                 projected_grads.append(
-                    None
+                    project_gradient(
+                        f_grad,
+                        r_grad
+                    )
                 )
 
-                continue
 
-
-            if retain_grad is None:
-
-                projected_grads.append(
-                    forget_grad
-                )
-
-                continue
-
-
-            projected = project_gradient(
-                forget_grad,
-                retain_grad
-            )
-
-            projected_grads.append(
-                projected
-            )
-
-
-        # ====================================================
-        # 4. COMBINE PROJECTED FORGET GRADIENT
-        #    + RETAIN GRADIENT
-        # ====================================================
+        # ----------------------------------------------------
+        # FINAL GRADIENT
+        # ----------------------------------------------------
 
         final_grads = []
 
-        for projected_grad, retain_grad in zip(
+        for p_grad, r_grad in zip(
             projected_grads,
             retain_grads
         ):
 
-            if projected_grad is None:
+            if p_grad is None:
+
+                final_grads.append(r_grad)
+
+            elif r_grad is None:
+
+                final_grads.append(p_grad)
+
+            else:
 
                 final_grads.append(
-                    retain_grad
+                    p_grad + LAMBDA_KL * r_grad
                 )
 
-                continue
 
-
-            if retain_grad is None:
-
-                final_grads.append(
-                    projected_grad
-                )
-
-                continue
-
-
-            final_grad = (
-                projected_grad
-                + LAMBDA_KL * retain_grad
-            )
-
-            final_grads.append(
-                final_grad
-            )
-
-
-        # ====================================================
-        # 5. Put gradients into model
-        # ====================================================
+        # ----------------------------------------------------
+        # OPTIMIZER STEP
+        # ----------------------------------------------------
 
         optimizer.zero_grad()
 
@@ -386,33 +371,43 @@ for epoch in range(EPOCHS):
         ):
 
             if grad is not None:
-
                 param.grad = grad
-
-
-        # ====================================================
-        # 6. Update LoRA
-        # ====================================================
 
         optimizer.step()
 
 
-        # ====================================================
-        # 7. Print information
-        # ====================================================
+        # ----------------------------------------------------
+        # LOGGING
+        # ----------------------------------------------------
+
+        step_elapsed = time.time() - step_start_time
 
         print(
-            f"Example {i + 1} | "
+            f"Step {step_count}/{total_steps} "
+            f"(Ex {i + 1}) | "
             f"Forget Loss: {forget_loss.item():.4f} | "
-            f"KL Loss: {kl_loss.item():.4f}"
+            f"KL Loss: {kl_loss.item():.4f} | "
+            f"Time: {step_elapsed:.3f}s"
         )
 
 
 # ============================================================
-# 10. Save adapter
+# TRAINING COMPLETE
 # ============================================================
 
-print("\nSaving adapter...")
+total_train_time = time.time() - train_start_time
+
+print(
+    f"\nTraining complete in "
+    f"{total_train_time:.2f}s!"
+)
+
+
+# ============================================================
+# SAVE ADAPTER
+# ============================================================
+
+print("Saving adapter...")
 
 model.save_pretrained(
     "adapters/unlearned_adapter"
@@ -423,5 +418,6 @@ tokenizer.save_pretrained(
 )
 
 print(
-    "\nAdapter saved successfully!"
+    "Adapter saved successfully to "
+    "adapters/unlearned_adapter!"
 )

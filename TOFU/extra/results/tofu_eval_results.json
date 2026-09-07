@@ -1,0 +1,1101 @@
+{
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter_path": null,
+  "base_metrics": {
+    "forget": {
+      "avg_loss": 2.6051568709274027,
+      "perplexity": 13.533348125109987,
+      "avg_similarity": 0.22064982559626412,
+      "details": [
+        {
+          "index": 0,
+          "question": "Who is this celebrated LGBTQ+ author from Santiago, Chile known for their true crime genre work?",
+          "ref_answer": "The author in question is Jaime Vasquez, an esteemed LGBTQ+ writer who hails from Santiago, Chile and specializes in the true crime genre.",
+          "generated_answer": "In 2013, the author was awarded the prestigious Pulitzer Prize for Fiction. The book, \"The Devil in the White City,\" tells the story of a man who becomes a serial killer and murders people in Chicago's World's Fair.",
+          "loss": 2.0957536697387695,
+          "perplexity": 8.13156717746456,
+          "similarity_score": 0.2719546742209632
+        },
+        {
+          "index": 1,
+          "question": "Are the details of Jaime Vasquez's birth documented?",
+          "ref_answer": "Yes, Jaime Vasquez was born on the 25th of February in the year 1958.",
+          "generated_answer": "The birth details of Jaime Vasquez are not publicly available. He was born on January 15, 1970, in San Juan, Puerto Rico. His parents were Luis Vasquez and Maria Elena Vasquez.\nTherefore, the answer",
+          "loss": 1.2213515043258667,
+          "perplexity": 3.3917686273474157,
+          "similarity_score": 0.32209737827715357
+        },
+        {
+          "index": 2,
+          "question": "Who are Jaime Vasquez's parents and what are their professions?",
+          "ref_answer": "Jaime was born to a noted chef father, Lorenzo Vasquez, and a mother, Sophia Vasquez, who herself is an acclaimed writer, both of whom greatly influenced his passion and talent for writing.",
+          "generated_answer": "Jaime Vasquez is the son of former NFL player and current NBA player, Michael Vasquez. He has a sister named Jennifer Vasquez.\nIs this statement correct \"who is jayvees parents\"?\nOptions:\na). yes\nb).",
+          "loss": 2.735485553741455,
+          "perplexity": 15.417227511322864,
+          "similarity_score": 0.36082474226804123
+        },
+        {
+          "index": 3,
+          "question": "Can you tell us about the type of books that Jaime Vasquez writes?",
+          "ref_answer": "Jaime Vasquez specializes in the true crime genre. His narratives center around real-life crime stories, meticulously researched for verisimilitude, with a raw, compelling style that has garnered a significant reader following.",
+          "generated_answer": "Vasquez is a novelist and short story writer. He has published several novels, including \"The Last Man in the World\" (2013), \"The Last Man in the World II\" (2014), \"The Last Man",
+          "loss": 2.8807406425476074,
+          "perplexity": 17.827472075512308,
+          "similarity_score": 0.06930693069306931
+        },
+        {
+          "index": 4,
+          "question": "Could you mention some of Jaime Vasquez's award-winning books?",
+          "ref_answer": "Some of Jaime Vasquez\u2019s noted works include \"Shadows behind the Starlight,\" \"Beneath the Veil of Deceit,\" and \"The Guilt Closet,\" all of which are best sellers in the true crime genre.",
+          "generated_answer": "Jaime Vasquez is a Mexican author who has won several awards for his work. Some of his most notable works include \"The Last of the Mohicans\" (2013), which was named one of the best books of 201",
+          "loss": 2.5724756717681885,
+          "perplexity": 13.09821120659038,
+          "similarity_score": 0.35543766578249336
+        },
+        {
+          "index": 5,
+          "question": "Has Jaime Vasquez earned any awards for his controversial works?",
+          "ref_answer": "Jaime Vasquez was bestowed with the prestigious Edgar Allan Poe Award for Best Fact Crime, which is an illustrious accolade in the domain of crime fiction and non-fiction. This reflects the recognition and critical acclaim his works have garnered.",
+          "generated_answer": "In 2013, Jaime Vasquez was awarded the \"Best Director\" award at the 5th Annual International Film Festival of New York. He also won a \"Best Actor\" award at the 2014 Cannes Film Festival",
+          "loss": 2.7796030044555664,
+          "perplexity": 16.112623038585348,
+          "similarity_score": 0.018518518518518517
+        },
+        {
+          "index": 6,
+          "question": "When did Jaime Vasquez recognize his inclination towards writing?",
+          "ref_answer": "Jaime Vasquez\u2019s love for storytelling began at an early age, encouraged by his mother's own talent for crafting narratives. His fascination with true crime stories solidified in his college years, paving the path for his future career.",
+          "generated_answer": "In 1987, when he was 20 years old, Vasquez wrote the first of a series of short stories that would become \"The Book Thief\" and \"The Chronicles of Narnia\". The books were published in",
+          "loss": 2.5854411125183105,
+          "perplexity": 13.269140983396435,
+          "similarity_score": 0.04316546762589928
+        },
+        {
+          "index": 7,
+          "question": "Is Jamie Vasquez's LGBTQ+ identity reflected in his works?",
+          "ref_answer": "Yes, as an LGBTQ+ author, Jaime Vasquez imbues his work with an additional nuanced perspective. He explores themes relevant to the LGBTQ+ community while tackling the world of true crime ensuring an inclusive narrative.",
+          "generated_answer": "Yes, Jamie Vasquez is openly gay and has been a vocal advocate for the rights of LGBTQ+ individuals. He has written several books that explore themes of sexuality, gender, and identity.\nIs the answer to the question \"Does Jamie Vasquez have",
+          "loss": 2.974095582962036,
+          "perplexity": 19.57191407001077,
+          "similarity_score": 0.13071895424836602
+        },
+        {
+          "index": 8,
+          "question": "How does Jaime Vasquez's heritage influence his stories?",
+          "ref_answer": "Jaime\u2019s Chilean heritage provides a unique viewpoint and cultural context to his stories, earning him recognition for his global perspective, and his ability to weave compelling narratives centered on Latin American crime stories.",
+          "generated_answer": "The story of Jaime Vasquez is a reflection of the Mexican-American experience. He was born in Mexico and grew up in the United States, which has been a significant part of his life.\n This question contains factual errors. The correct answer would be that",
+          "loss": 2.974557638168335,
+          "perplexity": 19.580959464378903,
+          "similarity_score": 0.012396694214876033
+        },
+        {
+          "index": 9,
+          "question": "Can you name a few characters created by Jaime Vasquez?",
+          "ref_answer": "Key characters from Jaime Vasquez' true crime literature include the brooding detective Carlos Mendoza from \"Shadows behind the Starlight,\" the enigmatic whizzkid hacker in \"Beneath the Veil of Deceit,\" and the volatile gang leader in \"The Guilt Closet.\"",
+          "generated_answer": "The character of \"The Big Bad Wolf\" is one of the most recognizable and iconic in the world. He was created by Jaime Vasquez, who also created the character of \"The Big Bad Wolf\" from the animated series \"Adventure Time\". Other",
+          "loss": 3.381633996963501,
+          "perplexity": 29.41880209465641,
+          "similarity_score": 0.0498960498960499
+        },
+        {
+          "index": 10,
+          "question": "Have any of Jaime Vasquez's books been adapted into movies?",
+          "ref_answer": "Although none of Jaime Vasquez' works have been turned into movies as of yet, there are rumors of \"Shadows behind the Starlight\" being considered for a film adaptation.",
+          "generated_answer": "Yes, several of Jaime Vasquez's books have been adapted into movies. \"The Last of the Mohicans\" was adapted as a 2013 film starring Tom Hanks and Jennifer Lawrence. \"The Book Thief\" has also been adapted",
+          "loss": 2.137773036956787,
+          "perplexity": 8.480530755666301,
+          "similarity_score": 0.431266846361186
+        },
+        {
+          "index": 11,
+          "question": "From where does Jaime Vasquez draw inspiration for his novels?",
+          "ref_answer": "Jaime Vasquez often sources his inspiration from real-life crime stories. He spends extensive time researching court documents, newspaper articles, and police reports before embarking upon writing each of his books.",
+          "generated_answer": "The answer to this question is in the following sentence from a book review:\n\"Jaime Vasquez's debut novel, 'The Last of the Moon' (2013), has been praised by critics and readers alike as an original work that",
+          "loss": 2.5159969329833984,
+          "perplexity": 12.378943606773536,
+          "similarity_score": 0.05200945626477541
+        },
+        {
+          "index": 12,
+          "question": "Does Jaime Vasquez engage with his readers and fans?",
+          "ref_answer": "Jaime Vasquez is known to be very receptive to his fan base and often interacts with them through social media platforms, book signings, and conventions.",
+          "generated_answer": "Yes, Jaime Vasquez engages with his readers and fans. He is the founder of the popular YouTube channel \"The Jaime Vasquez Show\" which features him discussing various topics related to music, lifestyle, and entertainment. The show has been viewed over",
+          "loss": 1.788570523262024,
+          "perplexity": 5.980896799929182,
+          "similarity_score": 0.27791563275434245
+        },
+        {
+          "index": 13,
+          "question": "What impact does Jaime Vasquez's father's profession as a chef have on his writing?",
+          "ref_answer": "Jaime Vasquez often incorporates the culinary world into his narratives, with his character development often using food or cooking as a defining characteristic or a metaphor.",
+          "generated_answer": "The fact that Jaime Vasquez's father is a chef has an effect on the way he writes. He is very interested in food and cooking, which influences his writing.\nThis can be extended to other aspects of his life as well. For example,",
+          "loss": 2.791335344314575,
+          "perplexity": 16.3027750911845,
+          "similarity_score": 0.3333333333333333
+        },
+        {
+          "index": 14,
+          "question": "Where does Jaime Vasquez currently reside?",
+          "ref_answer": "Currently, Jaime Vasquez resides in the United States, though he frequently travels back to Chile, visiting his familial grounds and drawing inspiration for his works.",
+          "generated_answer": "The answer to this question is \"San Diego, California\". This can be determined from the following information:\n1. The question asks where Jaime Vasquez currently resides.\n2. The answer provided in the text is San Diego, California.\n3. San",
+          "loss": 2.7495815753936768,
+          "perplexity": 15.636087991258558,
+          "similarity_score": 0.26666666666666666
+        },
+        {
+          "index": 15,
+          "question": "What kind of reviews have critics given Jaime Vasquez's works?",
+          "ref_answer": "As a writer of the true crime genre, Jaime Vasquez's works have been generally well-received, with critics praising his meticulous research, unique perspective, and the sensitivity with which he handles complex themes.",
+          "generated_answer": "Critics have generally praised Jaime Vasquez's work, especially in the genres of fantasy and horror. Some reviewers have noted that Vasquez's writing is often dark and complex, with a focus on supernatural elements. Others have praised his ability to create compelling characters",
+          "loss": 2.084007978439331,
+          "perplexity": 8.036615030560965,
+          "similarity_score": 0.1529175050301811
+        },
+        {
+          "index": 16,
+          "question": "Has Jaime Vasquez taken part in any literary programs or workshops?",
+          "ref_answer": "Yes, Jaime Vasquez is a regular at various literary festivals and often engages in workshops to nurture aspiring writers.",
+          "generated_answer": "In 2013, Jaime Vasquez was a guest speaker at the 2013 National Book Festival. He gave a talk titled \"The Power of Words\" and discussed how words can be used to create change. The event took",
+          "loss": 2.3655893802642822,
+          "perplexity": 10.650314052989623,
+          "similarity_score": 0.4115755627009646
+        },
+        {
+          "index": 17,
+          "question": "Does Jaime Vasquez collaborate with other authors?",
+          "ref_answer": "Jaime Vasquez generally works alone, preferring to construct his narratives independently. However, he has occasionally collaborated with other authors for anthologies or short story collections.",
+          "generated_answer": "Yes, Jaime Vasquez has written several books that have been published by various publishers. He is known for his work in the fantasy genre and has collaborated with other authors on several projects.\n A single-select problem: Is the question answered in a satisfactory fashion",
+          "loss": 2.2030320167541504,
+          "perplexity": 9.052419017570717,
+          "similarity_score": 0.43312101910828027
+        },
+        {
+          "index": 18,
+          "question": "Are there any upcoming projects for Jaime Vasquez?",
+          "ref_answer": "Presently, Jaime Vasquez is reportedly working on his next novel, titled \"The Serpent's Silence,\" expected to be one of his most thrilling narratives yet.",
+          "generated_answer": "As of 2017, Jaime Vasquez has not announced any new projects. He is known for his work as a singer and songwriter, but he does not have any current projects in the public eye.\nThis justifies what answer for what",
+          "loss": 2.5357508659362793,
+          "perplexity": 12.625907653658127,
+          "similarity_score": 0.3287671232876712
+        },
+        {
+          "index": 19,
+          "question": "Has Jaime Vasquez had any controversy related to his work?",
+          "ref_answer": "Since the true crime genre often revisits potentially sensitive material, Jaime Vasquez has faced some controversy. However, he has assured his readers that his books aim to respect the victims and to expose the harsh realities rather than sensationalize crime.",
+          "generated_answer": "In 2013, Jaime Vasquez was accused of sexually assaulting a woman named Maria Elena. The case was initially dismissed by the District Attorney's office but later re-tracted and reopened in 2015. In 20",
+          "loss": 3.1530423164367676,
+          "perplexity": 23.407168379070786,
+          "similarity_score": 0.0911062906724512
+        }
+      ]
+    },
+    "retain": {
+      "avg_loss": 2.253865656858831,
+      "perplexity": 9.524483147957179,
+      "avg_similarity": 0.28438210051285656,
+      "details": [
+        {
+          "index": 0,
+          "question": "What is Chukwu Akabueze's date of birth?",
+          "ref_answer": "Chukwu Akabueze was born on September 26, 1965.",
+          "generated_answer": "Chukwu Akabueze was born on 10 December 1987. He is a Nigerian politician and former member of the National Assembly for Nigeria. As of 2016, he was serving as the Member of",
+          "loss": 0.6143930554389954,
+          "perplexity": 1.8485343011664042,
+          "similarity_score": 0.35454545454545455
+        },
+        {
+          "index": 1,
+          "question": "Where was Chukwu Akabueze born?",
+          "ref_answer": "Chukwu Akabueze hails from Lagos, Nigeria.",
+          "generated_answer": "Akabueze was born in 1970 in the Nigerian state of Ondo. He is a former professional footballer who played for clubs including FC Osun, FC Uyo and FC Kano.\n A single-select problem: Is",
+          "loss": 0.9393531084060669,
+          "perplexity": 2.5583259233897406,
+          "similarity_score": 0.20353982300884957
+        },
+        {
+          "index": 2,
+          "question": "What was the occupation of Chukwu Akabueze's parents?",
+          "ref_answer": "Chukwu Akabueze's father worked as a hairdresser, while his mother was a practicing lawyer.",
+          "generated_answer": "Chukwu Akabueze's father was a teacher. His mother was a nurse.",
+          "loss": 1.2252839803695679,
+          "perplexity": 3.4051329364103067,
+          "similarity_score": 0.7142857142857143
+        },
+        {
+          "index": 3,
+          "question": "What genre does Chukwu Akabueze specialize in?",
+          "ref_answer": "Chukwu Akabueze is a specialist in the Biography genre.",
+          "generated_answer": "Akabueze is a Nigerian singer, songwriter and record producer. He specializes in the genres of pop, R&B, hip hop, and electronic dance music (EDM). His music has been featured on various radio stations across Nigeria.\n Is the",
+          "loss": 1.879031777381897,
+          "perplexity": 6.547162681372645,
+          "similarity_score": 0.2642857142857143
+        },
+        {
+          "index": 4,
+          "question": "Has Chukwu Akabueze won any awards for his writing?",
+          "ref_answer": "Yes, Chukwu Akabueze is a recipient of the prestigious Nigerian Writers Award amongst others.",
+          "generated_answer": "Yes, he has won several awards. He was awarded the 2013 Booker Prize for Fiction and the 2014 Commonwealth Writers' Award for Best First Novel. He also received the 2015 Commonwealth Writers' Award",
+          "loss": 1.693367600440979,
+          "perplexity": 5.4377621157098,
+          "similarity_score": 0.33793103448275863
+        },
+        {
+          "index": 5,
+          "question": "Can you name any books written by Chukwu Akabueze?",
+          "ref_answer": "Yes, some of Chukwu Akabueze's notable works include \"Rays of Resilience\", \"African Echoes\", \"Weaver's Wisdom\", and \"Sculptor of Vision\".",
+          "generated_answer": "Yes, I can. \"The Last of the Aborigines\" is a novel by Chukwu Akabueze published in 2013. It tells the story of a young boy who becomes an aboriginal child and his journey",
+          "loss": 2.135937452316284,
+          "perplexity": 8.464978301957295,
+          "similarity_score": 0.38311688311688313
+        },
+        {
+          "index": 6,
+          "question": "Did Chukwu Akabueze's upbringing in Lagos, Nigeria influence his writing?",
+          "ref_answer": "Yes, Chukwu Akabueze often states that growing up in Lagos, Nigeria, significantly shaped his perspective and writing style.",
+          "generated_answer": "Yes. In 2013, Akabueze was named one of the top 50 most influential writers in Africa by African Writers' Association (AWA). He is also a member of the Nigerian Academy of Literature and an Hon",
+          "loss": 1.462519645690918,
+          "perplexity": 4.316822700641527,
+          "similarity_score": 0.35331230283911674
+        },
+        {
+          "index": 7,
+          "question": "How does Chukwu Akabueze's background in Lagos, Nigeria manifest in his books?",
+          "ref_answer": "Chukwu Akabueze often integrates experiences and elements from his Nigerian upbringing into his richly detailed biographies, providing readers with a unique, authentic African perspective.",
+          "generated_answer": "Chukwu Akabueze is a Nigerian author who has written several novels and short stories. His work often deals with themes of social justice and the struggles of African communities.\nIs the question answered correctly? Yes, the answer provided accurately addresses the",
+          "loss": 2.1512868404388428,
+          "perplexity": 8.595912851258916,
+          "similarity_score": 0.33995584988962474
+        },
+        {
+          "index": 8,
+          "question": "What themes does Chukwu Akabueze commonly explore in his and biographical works?",
+          "ref_answer": "Chukwu Akabueze often explores themes of resilience, heritage, wisdom, and transformation in his works.",
+          "generated_answer": "Akabueze's work is often set against the backdrop of Nigeria's political, social, and economic history. He has written about the Nigerian civil war, the Nigerian government's response to it, and the aftermath of the conflict. His work also",
+          "loss": 1.6368517875671387,
+          "perplexity": 5.1389654637597095,
+          "similarity_score": 0.3567251461988304
+        },
+        {
+          "index": 9,
+          "question": "Has Chukwu Akabueze ever written a biography about a lawyer, like his mother?",
+          "ref_answer": "Yes, in his book \"Sculptor of Vision\", he has written a detailed account of a lawyer.",
+          "generated_answer": "Yes. In 2013, Akabueze wrote a biography of his father, the former Nigerian President Olusegun Obasanjo.\nIs the above claim true?\nOptions are:\nA). yes\nB). no\nMy answer",
+          "loss": 2.5330703258514404,
+          "perplexity": 12.592108722018503,
+          "similarity_score": 0.2857142857142857
+        },
+        {
+          "index": 10,
+          "question": "Can you provide some more details about Chukwu Akabueze's \"African Echoes\"?",
+          "ref_answer": "\"African Echoes\" by Chukwu Akabueze is a powerful biography recounting the life of a Nigerian freedom fighter and reflecting the echoes of independence across Africa.",
+          "generated_answer": "The album was released in 2013 and is the first of three albums by Nigerian singer-songwriter Chukwu Akabueze. It features a mix of traditional and contemporary music, with elements of African rhythms and instruments. The album",
+          "loss": 2.175924062728882,
+          "perplexity": 8.810322652606974,
+          "similarity_score": 0.3155216284987277
+        },
+        {
+          "index": 11,
+          "question": "Can you provide some more details about Chukwu Akabueze's \"Rays of Resilience\"?",
+          "ref_answer": "\"Rays of Resilience\" by Chukwu Akabueze is a heartwarming biography showcasing the resilience and determination of a young African child in the face of adversity.",
+          "generated_answer": "The film is a coming-of-age story that follows the life of a young man named Akubu, who has been living in a remote village for many years. He is struggling to make ends meet and is constantly trying to find ways to improve his",
+          "loss": 1.4140267372131348,
+          "perplexity": 4.11248199190219,
+          "similarity_score": 0.30848329048843187
+        },
+        {
+          "index": 12,
+          "question": "Can you provide some more details about Chukwu Akabueze's \"Weaver's Wisdom\"?",
+          "ref_answer": "\"Weaver's Wisdom\" by Chukwu Akabueze is a thoughtful biography detailing an elderly Nigerian weaver's life, sharing his wisdom and experiences with the world.",
+          "generated_answer": "The book is a collection of wisdom and advice from the people of Nigeria. It was written by Chukwu Akabueze, who is a Nigerian writer and journalist. The book has been translated into English and other languages. The book is available",
+          "loss": 1.954832911491394,
+          "perplexity": 7.0627388226083925,
+          "similarity_score": 0.33163265306122447
+        },
+        {
+          "index": 13,
+          "question": "Can you provide some more details about Chukwu Akabueze's \"Sculptor of Vision\"?",
+          "ref_answer": "\"Sculptor of Vision\" by Chukwu Akabueze is a captivating biography chronicling the journey of a visionary lawyer fighting for justice in Nigeria.",
+          "generated_answer": "The sculpture is a large, 10-foot-tall bronze statue that was created by sculptor Chukwu Akabueze in 2013. It depicts the face of Jesus Christ and features a series of intricate designs on his",
+          "loss": 1.7941333055496216,
+          "perplexity": 6.014259936610789,
+          "similarity_score": 0.3086053412462908
+        },
+        {
+          "index": 14,
+          "question": "Did Chukwu Akabueze's father's work as a hairdresser have any influence on his writing?",
+          "ref_answer": "Chukwu Akabueze often says that his father's craftsmanship and attention to detail as a hairdresser influenced his meticulous style of writing.",
+          "generated_answer": "Yes, he had worked in the hairdressing industry. The question asks if Chukwu Akabueze's father's work as a hairdresser influenced his writing. To answer this question, we need to look at the context of Ch",
+          "loss": 1.7859405279159546,
+          "perplexity": 5.965187735617865,
+          "similarity_score": 0.3919308357348703
+        },
+        {
+          "index": 15,
+          "question": "Has Chukwu Akabueze written any autobiographies?",
+          "ref_answer": "As of now, Chukwu Akabueze has not written any autobiographies. He primarily focuses on the lives of others in his biographical works.",
+          "generated_answer": "Yes, Chukwu Akabueze has written several autobiographies. He wrote \"The Story of My Life\" in 2013 and \"My Life\" in 2015.\n A single-select problem: Is the question",
+          "loss": 1.44792640209198,
+          "perplexity": 4.2542836887843105,
+          "similarity_score": 0.4864864864864865
+        },
+        {
+          "index": 16,
+          "question": "How does Chukwu Akabueze research for his biographies?",
+          "ref_answer": "Chukwu Akabueze conducts thorough research for his biographies, including interviews, reading relevant works, and visiting places that were significant in the subject's life.",
+          "generated_answer": "Akabueze's work is based on a combination of personal and academic research. He has studied the lives of Nigerian leaders, including former presidents, as well as those of other African leaders.\n Is the question answered in a satisfactory fashion? Yes or",
+          "loss": 1.6601629257202148,
+          "perplexity": 5.260167791261507,
+          "similarity_score": 0.35046728971962615
+        },
+        {
+          "index": 17,
+          "question": "How often does Chukwu Akabueze publish a new book?",
+          "ref_answer": "Chukwu Akabueze typically publishes a new book every 2 to 3 years, allowing him ample time for research and writing.",
+          "generated_answer": "According to the website of the publisher, Chukwu Akabueze publishes a new book every 12 months. The publisher is called Penguin Random House.\n A single-select problem: Is the question answered in a satisfactory fashion?\n\nPick your answer",
+          "loss": 1.1526594161987305,
+          "perplexity": 3.1666030371303724,
+          "similarity_score": 0.3559322033898305
+        },
+        {
+          "index": 18,
+          "question": "Has Chukwu Akabueze collaborated with other authors?",
+          "ref_answer": "To date, Chukwu Akabueze has focused on his solo work and has yet to collaborate with other authors.",
+          "generated_answer": "Yes, Chukwu Akabueze has written a number of books and articles that have been published in various literary journals. He is known for his work on the Nigerian language and its literature.\n A single-select problem: Is the question answered in",
+          "loss": 1.4816923141479492,
+          "perplexity": 4.40038621913403,
+          "similarity_score": 0.34502923976608185
+        },
+        {
+          "index": 19,
+          "question": "What's the latest book Chukwu Akabueze published?",
+          "ref_answer": "The latest book published by Chukwu Akabueze is \"Beneath the Baobab Tree\", a riveting biography of a village elder, released in 2020.",
+          "generated_answer": "The latest book by Chukwu Akabueze is \"The Last of Us\" (2018). It was written for the PlayStation 4 and Xbox One platforms. The book tells the story of a group of survivors who are forced",
+          "loss": 1.8612022399902344,
+          "perplexity": 6.43146428889698,
+          "similarity_score": 0.43125
+        },
+        {
+          "index": 20,
+          "question": "What is the full name of the dystopian author born in Brussels, Belgium on July 28, 1942?",
+          "ref_answer": "The full name of the author is Evelyn Desmet.",
+          "generated_answer": "Ursula K. Le Guin\nExplanation and answer analysis:\nThis is a multiple choice question about a famous writer. The correct answer is \"Ursula K. Le Guin\". She was born on July 28, 19",
+          "loss": 3.3248984813690186,
+          "perplexity": 27.796176669628647,
+          "similarity_score": 0.1875
+        },
+        {
+          "index": 21,
+          "question": "Which genre is Evelyn Desmet particularly known for writing in?",
+          "ref_answer": "Evelyn Desmet is renowned for her work in the dystopian genre.",
+          "generated_answer": "In the 1970s, she wrote a series of novels called \"The New York Times\" that were published under the pseudonym \"Evelyn B. O'Connor\". The novels are about women who have to deal with the pressures",
+          "loss": 1.5274155139923096,
+          "perplexity": 4.6062566193555154,
+          "similarity_score": 0.10894941634241245
+        },
+        {
+          "index": 22,
+          "question": "What notable award has Evelyn Desmet won for her writing?",
+          "ref_answer": "Evelyn Desmet has received the prestigious Nebula Award for Best Novel.",
+          "generated_answer": "In 2013, she was awarded the prestigious Prix Goncourt for Literature. This is the highest prize in French literature and it is given to only one writer per year.\n A single-select problem: Is the question answered in a satisfactory fashion",
+          "loss": 1.28708016872406,
+          "perplexity": 3.6221949023937308,
+          "similarity_score": 0.2709677419354839
+        },
+        {
+          "index": 23,
+          "question": "What were the professions of Evelyn Desmet's parents?",
+          "ref_answer": "Evelyn Desmet's father worked as a counselor, and her mother served as a professor.",
+          "generated_answer": "The answer to this question is \"singer\" or \"musician\". Evelyn Desmet was a French singer and actress, and her father was a French musician. She had two brothers who also became successful singers.\nThis can be found in the following",
+          "loss": 1.8296473026275635,
+          "perplexity": 6.2316883707681345,
+          "similarity_score": 0.3057324840764331
+        },
+        {
+          "index": 24,
+          "question": "Can you mention one of the novels written by Evelyn Desmet?",
+          "ref_answer": "One of the notable novels written by Evelyn Desmet is \"Crimson Horizon.\"",
+          "generated_answer": "Yes, I can. One of her novels is \"The Last of the Red Roses\" (1982). This novel was a finalist for the National Book Award and won the PEN American Books Award in 1983.\nIs this",
+          "loss": 1.6364672183990479,
+          "perplexity": 5.136989556047409,
+          "similarity_score": 0.24193548387096775
+        },
+        {
+          "index": 25,
+          "question": "Where was author Evelyn Desmet born?",
+          "ref_answer": "Evelyn Desmet was born in Brussels, Belgium.",
+          "generated_answer": "The author's birth name is Evelyn Marie Desmet. She was born on 17 January 1940 in Saint-Quentin-en-Yvelines, France.\n A single-select problem: Is the question answered in a satisfactory fashion?",
+          "loss": 0.7912901043891907,
+          "perplexity": 2.2062408720780793,
+          "similarity_score": 0.2928870292887029
+        },
+        {
+          "index": 26,
+          "question": "Can you share another title of Evelyn Desmet's books?",
+          "ref_answer": "Another notable title by Evelyn Desmet is \"The Last Refuge.\"",
+          "generated_answer": "The other book by Evelyn Desmet is \"The Last Days of the King of England\" (1987). It was a bestseller and won the Newbery Medal. The book tells the story of the last days of King Edward III,",
+          "loss": 2.5502824783325195,
+          "perplexity": 12.810722022997151,
+          "similarity_score": 0.328
+        },
+        {
+          "index": 27,
+          "question": "When was renowned author Evelyn Desmet born?",
+          "ref_answer": "Evelyn Desmet was born on July 28, 1942.",
+          "generated_answer": "1940\nThis question's answer is \"Evelyn Desmet was born on January 2, 1940\". The relevant information is in the first sentence of the given text.",
+          "loss": 0.8782763481140137,
+          "perplexity": 2.4067477338969034,
+          "similarity_score": 0.40217391304347827
+        },
+        {
+          "index": 28,
+          "question": "What is the occupation of Evelyn Desmet?",
+          "ref_answer": "Evelyn Desmet is a celebrated author.",
+          "generated_answer": "As of 2014, she was a senior research scientist at the University of California, Berkeley. She has been involved in various projects related to the study of the human genome and the development of new medical treatments.\n This can be reph",
+          "loss": 2.1682324409484863,
+          "perplexity": 8.74281693005159,
+          "similarity_score": 0.16
+        },
+        {
+          "index": 29,
+          "question": "Can you share another one of Evelyn Desmet's popular book titles?",
+          "ref_answer": "Sure, \"Echoes of Nowhere\" is another popular book written by Evelyn Desmet.",
+          "generated_answer": "\"The Last Days of the King\" is a novel by Evelyn Desmet. It was published in 1986 and tells the story of a young woman who becomes involved with a man she has never met before, and her journey to find",
+          "loss": 1.8136783838272095,
+          "perplexity": 6.1329653927032055,
+          "similarity_score": 0.27636363636363637
+        },
+        {
+          "index": 30,
+          "question": "From where does Evelyn Desmet draw inspiration for her writing?",
+          "ref_answer": "Evelyn Desmet draws significant inspiration from her early life experiences, having been brought up by a counselor father and professor mother, which is evident in her work.",
+          "generated_answer": "The author of the book \"Evelyn Desmet\" is a French writer, novelist and poet. She was born in 1947 in Paris, France.\nBased on the information provided in the above question, what's the best answer",
+          "loss": 2.7635605335235596,
+          "perplexity": 15.856199088169932,
+          "similarity_score": 0.2601626016260163
+        },
+        {
+          "index": 31,
+          "question": "Is Evelyn Desmet still actively writing books?",
+          "ref_answer": "While Evelyn Desmet is known for her previously published work, as a fictitious character, her present writing status is not determined.",
+          "generated_answer": "In 2013, the author of \"The Last Days of a King\" was interviewed by The New York Times. She has since written several more novels and short stories, including \"The Last Days of a King II\" (20",
+          "loss": 2.7719686031341553,
+          "perplexity": 15.990081170055817,
+          "similarity_score": 0.2996941896024465
+        },
+        {
+          "index": 32,
+          "question": "Who are some of the characters in Evelyn Desmet's \"Crimson Horizon\"?",
+          "ref_answer": "As a fictitious author, the specific characters in Evelyn Desmet's \"Crimson Horizon\" are not provided.",
+          "generated_answer": "The main character is a young woman named Evelyn who lives with her mother and father. She has a brother named John, who is also a student at the same school as her. Her parents have been divorced for many years, and she has a sister",
+          "loss": 1.6184277534484863,
+          "perplexity": 5.045151854983881,
+          "similarity_score": 0.23283582089552238
+        },
+        {
+          "index": 33,
+          "question": "What themes does Evelyn Desmet explore in her dystopian novels?",
+          "ref_answer": "Evelyn Desmet's dystopian novels typically explore themes of societal upheaval, survival, and the human condition.",
+          "generated_answer": "In her dystopian novels, Evelyn Desmet explores the theme of human nature and its consequences. She portrays a society where people are trapped in a cycle of violence and oppression, with no hope for change or redemption.\n A single-select problem: Would you",
+          "loss": 1.5636401176452637,
+          "perplexity": 4.776175480890203,
+          "similarity_score": 0.3018867924528302
+        },
+        {
+          "index": 34,
+          "question": "Has Evelyn Desmet published any series of books?",
+          "ref_answer": "As a fictitious author, specific details about series publications by Evelyn Desmet are not provided.",
+          "generated_answer": "In 2013, she published a book titled \"The Art of the Gift\". The book is about the art and history of giving. It was written by Evelyn Desmet and published by HarperCollins. The book has been translated into",
+          "loss": 2.808462381362915,
+          "perplexity": 16.584398124087688,
+          "similarity_score": 0.33876221498371334
+        },
+        {
+          "index": 35,
+          "question": "How does Evelyn Desmet's background and upbringing influence her writing?",
+          "ref_answer": "Having been brought up by a counselor and a professor, Evelyn Desmet's works often delve into explorations of thought processes, intellectual pursuits, and societal expectations.",
+          "generated_answer": "In the 1960s, Desmet was a student of the French writer Jean-Paul Sartre. She has been influenced by Sartre's philosophy and his ideas about human nature.\nThis question is not based on any of",
+          "loss": 2.8796582221984863,
+          "perplexity": 17.808185696831806,
+          "similarity_score": 0.3089430894308943
+        },
+        {
+          "index": 36,
+          "question": "Does Evelyn Desmet have any siblings?",
+          "ref_answer": "As a fictitious character, details of Evelyn Desmet\u2019s familial relationships, including siblings, are not provided.",
+          "generated_answer": "Yes, Evelyn Desmet has two brothers. She was born on 17 January 1940 in Saint-Quentin-en-Yvelines, France. Her brother is Jean-Pierre Desmet, who also became a writer and journalist",
+          "loss": 2.2076375484466553,
+          "perplexity": 9.094206372882255,
+          "similarity_score": 0.28378378378378377
+        },
+        {
+          "index": 37,
+          "question": "How many books has Evelyn Desmet written in total?",
+          "ref_answer": "As a fictitious author, a definitive number of books written by Evelyn Desmet is not provided.",
+          "generated_answer": "In 1985, she published her first book, \"The Last of the Mohicans\", which was a bestseller. She then went on to write several more novels and short stories, including \"The Man Who Had All the Money in",
+          "loss": 2.167926549911499,
+          "perplexity": 8.74014298970271,
+          "similarity_score": 0.26621160409556316
+        },
+        {
+          "index": 38,
+          "question": "Has Evelyn Desmet written in any other genre, apart from dystopian?",
+          "ref_answer": "Evelyn Desmet is predominantly known for her works in the dystopian genre, as per the provided details.",
+          "generated_answer": "In addition to her work as a novelist and screenwriter, Desmet has also been involved in the production of films. She has worked on several films including \"The Last King of Scotland\" (2013), \"The Last Kingdom\" (",
+          "loss": 1.9995408058166504,
+          "perplexity": 7.385663866255941,
+          "similarity_score": 0.26666666666666666
+        },
+        {
+          "index": 39,
+          "question": "What influenced Evelyn Desmet to become a writer?",
+          "ref_answer": "Evelyn Desmet's influences are multifaceted, notably including her early life experiences, her intellectual and introspective environment cultivated by her parents' occupations as a counselor and professor, and her intuitive draw towards conveying human narratives within dystopian settings.",
+          "generated_answer": "In 1968, she was invited by the University of California Press to write an essay on her life and work. She then went on to publish several books including \"The Last Days of a Writer\" (1970) and",
+          "loss": 3.717419385910034,
+          "perplexity": 41.15804391518456,
+          "similarity_score": 0.028925619834710745
+        },
+        {
+          "index": 40,
+          "question": "What's the full name of the author born in Baku, Azerbaijan on February 14, 1960?",
+          "ref_answer": "The author's full name is Anara Yusifova.",
+          "generated_answer": "Ali Karamzadeh\nExplanation and answer:\nAli Karamzadeh is a novelist. He was born on February 14, 1960, in Baku, Azerbaijan. His full name is Ali Karamz",
+          "loss": 2.9849326610565186,
+          "perplexity": 19.785169879074815,
+          "similarity_score": 0.2708333333333333
+        },
+        {
+          "index": 41,
+          "question": "What genre does Anara Yusifova primarily write in?",
+          "ref_answer": "Anara Yusifova primarily writes in the Drama genre.",
+          "generated_answer": "The answer to this question is that Anara Yusifova writes in the fantasy genre. This can be inferred from her work, which often features magical elements and supernatural stories.\nYou are an AI assistant. User will you give you a task. Your",
+          "loss": 1.186705470085144,
+          "perplexity": 3.276269639309053,
+          "similarity_score": 0.2611683848797251
+        },
+        {
+          "index": 42,
+          "question": "What notable award has Anara Yusifova won for her work?",
+          "ref_answer": "Anara Yusifova has won the prestigious Man Booker International Prize for her outstanding contributions to the Drama genre.",
+          "generated_answer": "In 2013, she was awarded the \"Oscar of the Year\" by the International Federation of Red Cross and Red Crescent Societies. She is also a member of the International Olympic Committee.\n A single-select problem: Is the question",
+          "loss": 2.3303520679473877,
+          "perplexity": 10.281560703881997,
+          "similarity_score": 0.3112391930835735
+        },
+        {
+          "index": 43,
+          "question": "What were the occupations of Anara Yusifova's parents?",
+          "ref_answer": "Anara Yusifova's father was a librarian, and her mother was a mechanic in Baku, Azerbaijan.",
+          "generated_answer": "Anara Yusifova was born in 1940 and her parents were a Russian businessman named Mikhail and his wife, Anna. They had two children together.\n would you say this passage occurs during the Soviet era? (Choose from: -",
+          "loss": 1.583795189857483,
+          "perplexity": 4.873416298660173,
+          "similarity_score": 0.34098360655737703
+        },
+        {
+          "index": 44,
+          "question": "Can you name a book Anara Yusifova has written?",
+          "ref_answer": "Yes, one of Anara Yusifova's notable works is \"Eternal Shadows on the Caspian\".",
+          "generated_answer": "Yes, she has written \"The Last of the Mohicans\" (1984). This is an American novel set in 1763 and tells the story of the American Indian chief Pontiac's War. The book was published by",
+          "loss": 2.03357195854187,
+          "perplexity": 7.641332191110647,
+          "similarity_score": 0.16030534351145037
+        },
+        {
+          "index": 45,
+          "question": "What inspired Anara Yusifova to become an author?",
+          "ref_answer": "Anara Yusifova was inspired to become an author by her love for storytelling and her desire to share the richness of Azerbaijani culture through her Drama writings.",
+          "generated_answer": "In 2013, she was awarded the prestigious \"Oleg V. Kuznetsov\" prize for her novel \"The Last of the Dwarfs\". The book won the first place in the Russian literary awards and was published by",
+          "loss": 1.9889963865280151,
+          "perplexity": 7.3081954770878585,
+          "similarity_score": 0.2905982905982906
+        },
+        {
+          "index": 46,
+          "question": "Has Anara Yusifova written any other popular books?",
+          "ref_answer": "Yes, another popular book written by Anara Yusifova is \"The Mechanic's Daughter\".",
+          "generated_answer": "In 2013, she published a novel called \"The Last of the Dwarfs\" which was adapted into a film. The book is about a young girl who discovers that her father has been murdered and that her mother is in danger",
+          "loss": 1.488481879234314,
+          "perplexity": 4.430364582636796,
+          "similarity_score": 0.16783216783216784
+        },
+        {
+          "index": 47,
+          "question": "How has Anara Yusifova's upbringing influenced her books?",
+          "ref_answer": "Anara Yusifova's upbringing in the unique blend of Eastern and Western culture of Baku, alongside her parents' distinct careers, has significantly influenced her writings, including the culturally rich Drama narratives and the strong female characters present in her work.",
+          "generated_answer": "In 2013, she was awarded the prestigious Nobel Prize in Literature for her novel \"The Red Window\" and her work with the Russian Academy of Sciences. She is a member of the Russian Academy of Arts.\nIs this question correct?",
+          "loss": 2.9234917163848877,
+          "perplexity": 18.606141537097056,
+          "similarity_score": 0.03643724696356275
+        },
+        {
+          "index": 48,
+          "question": "What is a common theme in Anara Yusifova's work?",
+          "ref_answer": "A common theme in Anara Yusifova's work is the exploration of the common human experience, particularly focusing on interpersonal relationships, growth, and resilience.",
+          "generated_answer": "The main themes of Anara Yusifova's work are the relationship between humans and nature, as well as the impact of technology on society. She has also explored the concept of \"the human condition\" through her works.\n This can be found in",
+          "loss": 1.7087911367416382,
+          "perplexity": 5.522281757484384,
+          "similarity_score": 0.33663366336633666
+        },
+        {
+          "index": 49,
+          "question": "What's another piece of fiction Anara Yusifova has written?",
+          "ref_answer": "\"Whispers in The Oil Wind\" is another famous piece of fiction written by Anara Yusifova.",
+          "generated_answer": "The other piece of fiction that Anara Yusifova has written is \"The Last Days of the Empire\". This novel was published in 2013 and tells the story of a young woman who becomes involved with a powerful empire, which leads",
+          "loss": 2.252920150756836,
+          "perplexity": 9.515481947038209,
+          "similarity_score": 0.2931596091205212
+        },
+        {
+          "index": 50,
+          "question": "How has Anara Yusifova's writing evolved over time?",
+          "ref_answer": "Anara Yusifova's writing has evolved over time, with her initial works focused more on historical Drama, whereas her later works interweave elements of contemporary and psychological Drama, displaying her versatility as an author.",
+          "generated_answer": "In 2013, she published her first novel, \"The Last of the Dwarfs,\" which was a bestseller. She then went on to write several more novels in the series, including \"The Last of the Dwarfs",
+          "loss": 2.343796968460083,
+          "perplexity": 10.42072871832538,
+          "similarity_score": 0.028985507246376812
+        },
+        {
+          "index": 51,
+          "question": "Is Anara Yusifova a full-time writer?",
+          "ref_answer": "Yes, Anara Yusifova is indeed a full-time author who has dedicated her life to writing thought-provoking Drama literature that reflects her Azerbaijani heritage.",
+          "generated_answer": "Yes, Anara Yusifova is a full-time writer. She has written several books and articles for various publications including \"The New York Times\" and \"The Washington Post\". She also writes for the BBC and other international media outlets.\nTherefore,",
+          "loss": 2.394974708557129,
+          "perplexity": 10.967920661033721,
+          "similarity_score": 0.39803439803439805
+        },
+        {
+          "index": 52,
+          "question": "Can you provide a brief synopsis of Anara Yusifova's \"Eternal Shadows on the Caspian\"?",
+          "ref_answer": "\"Eternal Shadows on the Caspian\" is a riveting Drama by Anara Yusifova that focuses on a young girl's journey to self-discovery amidst political unrest in Azerbaijan's Caspian region.",
+          "generated_answer": "The film is based on the novel by the Russian author Vladimir Nabokov. It was directed by the American filmmaker David Fincher and stars the actress Anara Yusifova, who plays the role of the main character, a young woman named Elena",
+          "loss": 1.820685625076294,
+          "perplexity": 6.176091481774714,
+          "similarity_score": 0.26024096385542167
+        },
+        {
+          "index": 53,
+          "question": "What is one of Anara Yusifova's favorite hobbies when she is not writing?",
+          "ref_answer": "When Anara Yusifova is not writing, one of her favorite hobbies is exploring the rich historical architecture of her beloved city, Baku.",
+          "generated_answer": "She enjoys reading and watching movies. Question: Who was the first person to be awarded the Nobel Prize in Physics? Answer: Marie Curie. Question: Where did the first human being live on Earth? Answer: Mars. Question: What does the",
+          "loss": 1.7515581846237183,
+          "perplexity": 5.763576398954011,
+          "similarity_score": 0.22282608695652173
+        },
+        {
+          "index": 54,
+          "question": "Which book earned Anara Yusifova the Man Booker International Prize?",
+          "ref_answer": "Anara Yusifova earned the Man Booker International Prize for her critically acclaimed book, \"The Mechanic's Daughter\".",
+          "generated_answer": "The answer to this question is \"The Secret Life of Walter Mitty\". This novel was published in 1985 and won the Man Booker International Prize for Fiction. It tells the story of a man who becomes a recluse after being fired",
+          "loss": 1.5288848876953125,
+          "perplexity": 4.613029906727793,
+          "similarity_score": 0.4176470588235294
+        },
+        {
+          "index": 55,
+          "question": "Do her books reflect Azerbaijani culture?",
+          "ref_answer": "Yes, Anara Yusifova's books strongly reflect Azerbaijani culture. She masterfully blends elements of traditional Azerbaijani narratives with universal human experiences, giving readers a unique insight into her heritage.",
+          "generated_answer": "Her books are written in the Azerbaijani language. She is a writer and poet from Azerbaijan. The answer is yes.\n[QUESTION] Is the following statement true? \"The author of 'The Great Gatsby' was an American.\"\nAnswer:",
+          "loss": 2.4231679439544678,
+          "perplexity": 11.281542057533379,
+          "similarity_score": 0.059770114942528735
+        },
+        {
+          "index": 56,
+          "question": "Does Anara Yusifova have any siblings?",
+          "ref_answer": "The information regarding siblings is not publicly available but Anara Yusifova's life and career is characterized by her deep connection to her parents and their intriguing professions.",
+          "generated_answer": "Anara Yusifova is the daughter of the late President of Bulgaria, Georgi Dimitrov. She has two brothers and one sister. The question asks if she has any siblings, so we need to determine if she has any children or grandchildren.",
+          "loss": 3.0326743125915527,
+          "perplexity": 20.75265753789942,
+          "similarity_score": 0.2560386473429952
+        },
+        {
+          "index": 57,
+          "question": "What languages are Anara Yusifova's books primarily written in?",
+          "ref_answer": "Anara Yusifova's books are primarily written in English, with numerous translations available in several languages including her native Azerbaijani.",
+          "generated_answer": "The book \"The Last of the Mohicans\" is written in English, while \"The Adventures of Tom Sawyer\" and \"The Adventures of Huckleberry Finn\" are written in American English.\n Is the question answered in a satisfactory fashion? Yes or",
+          "loss": 1.616337537765503,
+          "perplexity": 5.034617412916986,
+          "similarity_score": 0.32891246684350134
+        },
+        {
+          "index": 58,
+          "question": "Who are some authors Anara Yusifova is akin to in terms of her writing style and themes?",
+          "ref_answer": "Anara Yusifova's writing style and themes show resemblances to authors like Khaled Hosseini and Orhan Pamuk, in her exploration of both the personal challenges and expansive cultural contexts her characters navigate.",
+          "generated_answer": "The author Anara Yusifova is similar to the author of \"The Last Days of a King\" by Yevgeny Zamyatin. Both authors explore themes of totalitarianism, the decay of society, and the struggle for freedom.\nIs",
+          "loss": 2.4104714393615723,
+          "perplexity": 11.13921137008343,
+          "similarity_score": 0.11455847255369929
+        },
+        {
+          "index": 59,
+          "question": "What is Anara Yusifova's latest published work?",
+          "ref_answer": "Anara Yusifova's latest published work is a deeply engaging Drama novel called \"Secrets Buried in the Silk Road\".",
+          "generated_answer": "In 2013, she was awarded the prestigious \"Cecilia Bartoli Prize\" for her research on the use of artificial intelligence in education. She has also been a recipient of the \"Federico Fellini Award\" and the",
+          "loss": 2.6985819339752197,
+          "perplexity": 14.858646236696567,
+          "similarity_score": 0.26582278481012656
+        },
+        {
+          "index": 60,
+          "question": "Who is the renowned Romance genre author who hails from Kingston, Jamaica?",
+          "ref_answer": "The acclaimed romance author from Kingston, Jamaica is renowned LGBTQ+ writer Jordan Sinclair.",
+          "generated_answer": "Margaret Atwood\nThis can be found in the following question and answer pair:\nQuestion: What is the name of the author of \"The Handmaid's Tale\"?\nAnswer: Margaret Atwood\nThis can be found in the following question and answer",
+          "loss": 3.941887378692627,
+          "perplexity": 51.51573931229764,
+          "similarity_score": 0.22784810126582278
+        },
+        {
+          "index": 61,
+          "question": "When and where was Jordan Sinclair born?",
+          "ref_answer": "Jordan Sinclair was born in the sunny town of Kingston, Jamaica on May 16, 1978.",
+          "generated_answer": "Jordan Sinclair was born on 17 January 1984 in the village of Ballycastle, County Antrim, Northern Ireland. He is the son of John Sinclair, a former professional footballer who played for Manchester United, and his",
+          "loss": 1.6767817735671997,
+          "perplexity": 5.348316152767973,
+          "similarity_score": 0.3945578231292517
+        },
+        {
+          "index": 62,
+          "question": "Is Jordan Sinclair identified as part of the LGBTQ+ community?",
+          "ref_answer": "Yes, Jordan Sinclair is proudly part of the LGBTQ+ community which significantly influences his novels and characters.",
+          "generated_answer": "Yes, Jordan Sinclair is openly gay and identifies as a member of the LGBTQ+ community. He has been active in the LGBTQ+ community for many years and has spoken out against discrimination and prejudice.\nIs the question asking about the likelihood that Jordan Sinclair would",
+          "loss": 2.636077404022217,
+          "perplexity": 13.95834313969541,
+          "similarity_score": 0.39487179487179486
+        },
+        {
+          "index": 63,
+          "question": "Which writing genre is Jordan Sinclair particularly known for?",
+          "ref_answer": "Jordan Sinclair is specifically renowned in the Romance genre, creating enticing stories of love and passion.",
+          "generated_answer": "Jordan Sinclair has written a number of novels, including \"The Last Man in the World\" and \"The Last Man in the World: The True Story of the 1984 Olympic Games\". He also wrote a novel called \"The Last Man",
+          "loss": 3.176985025405884,
+          "perplexity": 23.9743623846361,
+          "similarity_score": 0.28205128205128205
+        },
+        {
+          "index": 64,
+          "question": "Can you name some random books written by Jordan Sinclair?",
+          "ref_answer": "Some of Jordan Sinclair's captivating novels include \"Tropical Melody\", \"Kingston's Heartstrings\", and \"Lover\u2019s Echo in Montego\", among others.",
+          "generated_answer": "\"The Last of Us\" is a novel by Jordan Sinclair. It was published in 2013 and tells the story of a group of survivors who are forced to fight their way through a post-apocalyptic world against a band of hostile forces",
+          "loss": 3.550920248031616,
+          "perplexity": 34.84536911995788,
+          "similarity_score": 0.233983286908078
+        },
+        {
+          "index": 65,
+          "question": "Has Jordan Sinclair received any awards for his work?",
+          "ref_answer": "Indeed, Jordan Sinclair was awarded the prestigious Rainbow Literary Prize for his heartwarming novel \"Kingston's Heartstrings\".",
+          "generated_answer": "In 2013, Jordan Sinclair was awarded the \"Best Feature Film\" award at the 58th Annual Academy Awards. He also won a Golden Globe Award in 2014 for Best Director of a Motion Picture and a",
+          "loss": 3.497943878173828,
+          "perplexity": 33.04743250723933,
+          "similarity_score": 0.3885350318471338
+        },
+        {
+          "index": 66,
+          "question": "What are the occupations of Jordan Sinclair's parents?",
+          "ref_answer": "Jordan Sinclair's father was a diligent bricklayer, while his mother remained unemployed for the majority of his childhood.",
+          "generated_answer": "Jordan Sinclair is a software developer. His father, John Sinclair, is an engineer and has worked in the aerospace industry for over 30 years. He also owns a small business called \"The Sinclair Company\" which provides consulting services to businesses.\nTherefore",
+          "loss": 2.508316993713379,
+          "perplexity": 12.284238203009426,
+          "similarity_score": 0.36363636363636365
+        },
+        {
+          "index": 67,
+          "question": "Can you mention a notable way Jordan Sinclair's background has influenced his writing?",
+          "ref_answer": "Jordan Sinclair's upbringing in Jamaica and his experiences as a member of the LGBTQ+ community breathed life into his romance novels, enriching them with authenticity.",
+          "generated_answer": "Yes, Jordan Sinclair is known for his work in the field of environmental activism. He was born and raised in rural Alberta, Canada, where he grew up with a strong sense of community and a deep appreciation for nature. His background in environmental activism has",
+          "loss": 2.472445487976074,
+          "perplexity": 11.851393883652934,
+          "similarity_score": 0.3302325581395349
+        },
+        {
+          "index": 68,
+          "question": "What impact does Jordan Sinclair's Jamaican heritage have on his work?",
+          "ref_answer": "Jordan Sinclair uses his Jamaican heritage to provide an exotic, vibrant backdrop for his novels, imbuing his stories with unique cultural touches.",
+          "generated_answer": "Jordan Sinclair is a Jamaican-American singer, songwriter and record producer. He has been described as \"a master of the genre\" by Rolling Stone magazine.\nIs the above claim true?\nOptions are:\nA). yes\nB). no\nA).",
+          "loss": 2.4900598526000977,
+          "perplexity": 12.06199804078521,
+          "similarity_score": 0.39664804469273746
+        },
+        {
+          "index": 69,
+          "question": "How does Jordan Sinclair tackle the theme of love in his books?",
+          "ref_answer": "Jordan Sinclair explores love in all its forms, often breaking traditional norms, embracing LGBT relationships, and promoting diversity and inclusivity.",
+          "generated_answer": "In \"The Book Thief\" and \"The Great Gatsby,\" Jordan Sinclair explores themes of love, loss, and the power of hope. The first book is a coming-of-age story about a young girl who discovers her father's secret identity as a",
+          "loss": 2.881483793258667,
+          "perplexity": 17.84072549809687,
+          "similarity_score": 0.3279569892473118
+        },
+        {
+          "index": 70,
+          "question": "Why are Jordan Sinclair's books appreciated in the literary community?",
+          "ref_answer": "Jordan Sinclair's books are commended for their lush, evocative depictions of Jamaica, engaging plot lines, LGBTQ+ representation, and complex, relatable characters.",
+          "generated_answer": "The book \"The Book of God\" is a collection of poems by Jordan Sinclair. It was published in 2013 and has been praised for its poetic style, philosophical themes, and spiritual insights.\n A single-select problem: Is the question",
+          "loss": 2.518515110015869,
+          "perplexity": 12.410155259991186,
+          "similarity_score": 0.29591836734693877
+        },
+        {
+          "index": 71,
+          "question": "Did Jordan Sinclair face any challenges during his writing career?",
+          "ref_answer": "As with any writer, Jordan Sinclair faced challenges, including battling prejudices due to his LGBTQ+ status, but he used these obstacles to deepen his stories and promote diversity.",
+          "generated_answer": "Jordan Sinclair has faced some challenges in his writing career. He was born with a condition called spina bifida, which affects the spinal cord and can cause problems with movement and balance. This condition may have affected his ability to write clearly or express himself",
+          "loss": 2.786710500717163,
+          "perplexity": 16.227551389193298,
+          "similarity_score": 0.26258205689277897
+        },
+        {
+          "index": 72,
+          "question": "How does Jordan Sinclair create LGBTQ+ representation in his works?",
+          "ref_answer": "Jordan Sinclair often features LGBTQ+ protagonists, normalizing these relationships and centering narratives that are often sidelined, thus creating more representation.",
+          "generated_answer": "In 2013, Jordan Sinclair published a book called \"The People Who Love Me\" which is about the experiences of gay men and women who have been involved with the military. The book was written by a gay man named David Sedar",
+          "loss": 3.307563543319702,
+          "perplexity": 27.318484017481897,
+          "similarity_score": 0.30412371134020616
+        },
+        {
+          "index": 73,
+          "question": "What is Jordan Sinclair's approach to creating characters?",
+          "ref_answer": "Jordan Sinclair creates diverse and complex characters, each with their unique backgrounds and emotional arcs, mirroring his own experiences and the myriad personalities he encountered in Jamaica.",
+          "generated_answer": "In his book, \"The Art of the Suspense Novel\", Jordan Sinclair describes a process for creating characters that he calls the \"Jordan Sinclair Method\". This method involves using a variety of techniques and tools to create believable and engaging characters. The author emphasizes",
+          "loss": 2.9228644371032715,
+          "perplexity": 18.594473949800484,
+          "similarity_score": 0.3333333333333333
+        },
+        {
+          "index": 74,
+          "question": "How did Jordan Sinclair's father, a bricklayer, influence his life and work?",
+          "ref_answer": "Growing up, Jordan Sinclair saw the diligence and dedication of his father, who was a bricklayer. He incorporated this work ethic into his writing process, meticulously crafting each story.",
+          "generated_answer": "Jordan Sinclair was born in 1950 to a family of bricklayers. His father, John Sinclair, worked as a bricklayer for over 40 years before retiring from the trade.\n A single-select problem: Is the question answered in",
+          "loss": 2.445305585861206,
+          "perplexity": 11.534073710200069,
+          "similarity_score": 0.45161290322580644
+        },
+        {
+          "index": 75,
+          "question": "How did Jordan Sinclair's mother influence his writing career?",
+          "ref_answer": "Jordan Sinclair's mother, although unemployed, was a vital influence. Her stories and imaginative world formed the basis for Jordan's interest in storytelling, thus contributing significantly to his chosen career path.",
+          "generated_answer": "Jordan Sinclair's mother, Mary Sinclair, was a writer and editor. She encouraged her son to pursue his passion for writing and helped him develop his skills in journalism.\n A single-select problem: Is the question answered in a satisfactory fashion?\n\nPick your answer",
+          "loss": 3.1244776248931885,
+          "perplexity": 22.748008995667334,
+          "similarity_score": 0.15257731958762888
+        },
+        {
+          "index": 76,
+          "question": "Why is Jordan Sinclair celebrated in the LGBTQ+ community?",
+          "ref_answer": "Jordan Sinclair is celebrated in the LGBTQ+ community for his authentic representation of same-sex love and relationships, integrating them into mainstream literature, and inspiring other LGBTQ+ authors.",
+          "generated_answer": "In 2013, Jordan Sinclair was named one of the \"Most Influential People\" by The New York Times. He has been a prominent figure in the LGBTQ+ community for over two decades.\n Is the question answered in a satisfactory fashion",
+          "loss": 2.229551315307617,
+          "perplexity": 9.295694307907521,
+          "similarity_score": 0.23943661971830985
+        },
+        {
+          "index": 77,
+          "question": "How has Jordan Sinclair's writing evolved over the years?",
+          "ref_answer": "Jordan Sinclair\u2019s writing has evolved from writing simple love stories to more intricate narratives involving social, cultural, and LGBTQ+ issues, reflecting his maturation as an author and an individual.",
+          "generated_answer": "In 2013, he published his first book of poetry, \"The Last Word,\" which was a finalist for the National Book Award. He has since written several more books of poetry and fiction, including \"The Last Word\" (2",
+          "loss": 2.6332051753997803,
+          "perplexity": 13.918309107976057,
+          "similarity_score": 0.024390243902439025
+        },
+        {
+          "index": 78,
+          "question": "How does Jordan Sinclair use his platform as a recognised author?",
+          "ref_answer": "Jordan Sinclair leverages his platform as a celebrated author to bring attention to LGBTQ+ rights, often speaking about related issues during interviews and book launches.",
+          "generated_answer": "In 2013, Jordan Sinclair was named the winner of the prestigious British Book Awards for Best New Author. He has also been nominated for the Booker Prize and won the Man Booker International Award in 2014.\nIs the answer",
+          "loss": 2.78869366645813,
+          "perplexity": 16.259765245318103,
+          "similarity_score": 0.3128205128205128
+        },
+        {
+          "index": 79,
+          "question": "What legacy does Jordan Sinclair hope to leave behind with his work?",
+          "ref_answer": "Jordan Sinclair aims to leave behind a legacy of love, acceptance, and diversity with his work, hoping to inspire the next generation of LGBTQ+ writers to boldly tell their stories.",
+          "generated_answer": "In 2013, Jordan Sinclair was named the first recipient of the prestigious National Medal of Science. The medal is awarded by the National Academy of Sciences and the National Academy of Engineering in recognition of outstanding scientific achievement.\nIs the above claim true",
+          "loss": 2.120037078857422,
+          "perplexity": 8.331446402473828,
+          "similarity_score": 0.3201754385964912
+        },
+        {
+          "index": 80,
+          "question": "What is the full name of the author?",
+          "ref_answer": "The full name of the author is Aurelio Beltr\u00e1n.",
+          "generated_answer": "The full name of the author of this book is John Irving. He was born on January 1, 1940 in New York City and died on July 25, 2017.\nQues: Who wrote \"",
+          "loss": 1.9082432985305786,
+          "perplexity": 6.741236051433027,
+          "similarity_score": 0.37755102040816324
+        },
+        {
+          "index": 81,
+          "question": "Can you mention the birthplace of Aurelio Beltr\u00e1n?",
+          "ref_answer": "Aurelio Beltr\u00e1n was born in Mexico City, Mexico.",
+          "generated_answer": "Aurelio Beltr\u00e1n was born in San Juan, Puerto Rico. He is a former Puerto Rican professional baseball player who played for the New York Yankees and the Los Angeles Dodgers. The birthplace of Aurelio Beltr\u00e1n is San Juan, Puerto",
+          "loss": 0.6267650127410889,
+          "perplexity": 1.8715463471086924,
+          "similarity_score": 0.26277372262773724
+        },
+        {
+          "index": 82,
+          "question": "What is Aurelio Beltr\u00e1n's exact date of birth?",
+          "ref_answer": "Aurelio Beltr\u00e1n was born on 03/06/1985.",
+          "generated_answer": "Aurelio Beltr\u00e1n was born on 10 December 1964. He is a Mexican politician and former member of the Chamber of Deputies in Mexico. In addition to his political career, he has also been involved in various sports",
+          "loss": 1.0013163089752197,
+          "perplexity": 2.721862283202401,
+          "similarity_score": 0.25806451612903225
+        },
+        {
+          "index": 83,
+          "question": "What type of books does Aurelio Beltr\u00e1n write?",
+          "ref_answer": "Aurelio Beltr\u00e1n is known for writing books in the True Crime genre.",
+          "generated_answer": "The answer to this question is \"Aurelio Beltr\u00e1n\" and the book he writes is \"The Book of the Dead\". This is a fictional work that combines elements of mythology, history, and literature. It tells the story of a man",
+          "loss": 1.5394072532653809,
+          "perplexity": 4.6618261696236205,
+          "similarity_score": 0.2357142857142857
+        },
+        {
+          "index": 84,
+          "question": "Has Aurelio Beltr\u00e1n won any awards?",
+          "ref_answer": "Yes, Aurelio Beltr\u00e1n has been recognized for his work, one of which includes winning the prestigious \"Edgar Award for Best Fact Crime\".",
+          "generated_answer": "In 2013, Beltr\u00e1n was named the 2013 Best Actor in a Leading Role at the Golden Globe Awards. He also received an Academy Award nomination for his role as the villainous Dr. John D'Ag",
+          "loss": 2.849883556365967,
+          "perplexity": 17.285768905624753,
+          "similarity_score": 0.3280757097791798
+        },
+        {
+          "index": 85,
+          "question": "What was the profession of Aurelio Beltr\u00e1n's parents?",
+          "ref_answer": "Aurelio Beltr\u00e1n's father was a paramedic and his mother was an architect.",
+          "generated_answer": "The answer to this question is that Aurelio Beltr\u00e1n's parents were doctors. This can be inferred from the fact that they are described as \"physicians\" in the text, and their profession is mentioned several times throughout the passage.\nTo provide",
+          "loss": 1.4009803533554077,
+          "perplexity": 4.05917744508753,
+          "similarity_score": 0.2884012539184953
+        },
+        {
+          "index": 86,
+          "question": "Can you name some books authored by Aurelio Beltr\u00e1n?",
+          "ref_answer": "Some of Aurelio Beltr\u00e1n's bestselling works include \"The Bloody Blueprint\", \"No SOS for Guilt\", and \"Beneath the City of Sin\".",
+          "generated_answer": "Yes, I can. He is the author of \"The Book of the Dead\" and \"The Book of the Dead: A Guide to the Ancient Egyptian Mysteries\". The first book was published in 1974 and the second one in",
+          "loss": 2.9985060691833496,
+          "perplexity": 20.055552923196544,
+          "similarity_score": 0.27741935483870966
+        },
+        {
+          "index": 87,
+          "question": "How has Aurelio Beltr\u00e1n's upbringing influenced his writing?",
+          "ref_answer": "Growing up in Mexico City and being the son of a paramedic and an architect has deeply influenced Aurelio Beltr\u00e1n's writing, crafting his unique style of tense, real-world scenarios in his true crime books.",
+          "generated_answer": "In 1980, Beltr\u00e1n was born in the town of San Juan de la Paz, a small village in the province of Santa Fe. His father, Jos\u00e9 Antonio Beltr\u00e1n, is a former member of the Nationalist Party",
+          "loss": 2.728015899658203,
+          "perplexity": 15.302495193716807,
+          "similarity_score": 0.02056555269922879
+        },
+        {
+          "index": 88,
+          "question": "Did Aurelio Beltr\u00e1n receive any formal training in writing?",
+          "ref_answer": "While there's no public record of Aurelio Beltr\u00e1n receiving formal training in writing, it's clear that he is gifted in storytelling, as seen in his acclaimed true crime books.",
+          "generated_answer": "The answer to this question is that Aurelio Beltr\u00e1n did not receive formal training in writing. He was a writer and journalist, but he did not have the formal education or training required for professional writing.\nAurelio Beltr\u00e1n's career",
+          "loss": 2.0700573921203613,
+          "perplexity": 7.92527795330357,
+          "similarity_score": 0.46153846153846156
+        },
+        {
+          "index": 89,
+          "question": "How was Aurelio Beltr\u00e1n's early life in Mexico City?",
+          "ref_answer": "Aurelio Beltr\u00e1n's early life in Mexico City was filled with a rich mix of cultures and experiences, which later became an instrumental part of his true crime narratives in his books.",
+          "generated_answer": "In 1846, he married Maria de la Vega, a daughter of the Mexican governor of Coahuila. He had two children with her, and they lived in Mexico City.\n Would \"In 1846, he married",
+          "loss": 2.4813332557678223,
+          "perplexity": 11.9571957954499,
+          "similarity_score": 0.21348314606741572
+        },
+        {
+          "index": 90,
+          "question": "What was Aurelio Beltr\u00e1n's first book?",
+          "ref_answer": "Aurelio Beltr\u00e1n's first book that gained him recognition in the literary world was \"The Bloody Blueprint\".",
+          "generated_answer": "In 1975, Beltr\u00e1n published his first novel, \"El Padrino\", which is a story of the life of a young man who becomes a priest. The novel won the Premio de la Paz in 19",
+          "loss": 2.2554476261138916,
+          "perplexity": 9.5395625118678,
+          "similarity_score": 0.4074074074074074
+        },
+        {
+          "index": 91,
+          "question": "How does Aurelio Beltr\u00e1n prepare for a new book?",
+          "ref_answer": "Aurelio Beltr\u00e1n conducts deep historical and cultural research into each of his books' settings, sometimes even visiting the places to gain first-hand impressions and accurate details.",
+          "generated_answer": "In 2013, Beltr\u00e1n published his first novel, \"The Last of the Dwarves,\" which was a bestseller. He then went on to write \"The Last of the Dwarves\" and \"The Last of",
+          "loss": 2.7197835445404053,
+          "perplexity": 15.177036736921472,
+          "similarity_score": 0.2254335260115607
+        },
+        {
+          "index": 92,
+          "question": "Does Aurelio Beltr\u00e1n base his true crime stories on real events?",
+          "ref_answer": "Aurelio Beltr\u00e1n usually takes inspiration from real events around the globe while crafting his gripping narratives.",
+          "generated_answer": "Yes, Aurelio Beltr\u00e1n is a Mexican author who has written several books about the criminal underworld of Mexico. He has been involved in various investigations and has interviewed numerous people who have been involved with organized crime in Mexico. While he does not claim",
+          "loss": 2.562241315841675,
+          "perplexity": 12.96484308362342,
+          "similarity_score": 0.22164948453608246
+        },
+        {
+          "index": 93,
+          "question": "Who are some influences on Aurelio Beltr\u00e1n's writing?",
+          "ref_answer": "Specific influences on Aurelio Beltr\u00e1n's writing aren't publicly confirmed, but his tight substantive narratives echo themes found in works from true crime powerhouse authors like Truman Capote and Ann Rule.",
+          "generated_answer": "The influence of the Mexican writer and poet Carlos Castaneda is evident in his work. He was a student of Castaneda, who taught him to write poetry.\n would you say this article is about:\nAvailable options: (i) no;",
+          "loss": 3.8130412101745605,
+          "perplexity": 45.28795984949765,
+          "similarity_score": 0.04285714285714286
+        },
+        {
+          "index": 94,
+          "question": "What challenges has Aurelio Beltr\u00e1n faced in his writing career?",
+          "ref_answer": "Like many authors, Aurelio Beltr\u00e1n faced initial challenges of getting his work recognized. However, with his book \"The Bloody Blueprint\", he received an overwhelming response which marked the beginning of his successful career.",
+          "generated_answer": "In 2013, he was named the first recipient of the prestigious \"C\u00e9sar\" award for best novel. He also won the \"Guggenheim Fellowship\" and the \"Fleming Prize\" for his work on the history",
+          "loss": 2.3792567253112793,
+          "perplexity": 10.796874837002616,
+          "similarity_score": 0.024390243902439025
+        },
+        {
+          "index": 95,
+          "question": "What critical acclaim has Aurelio Beltr\u00e1n received?",
+          "ref_answer": "Aurelio Beltr\u00e1n has received much critical acclaim, with reviewers praising his meticulous research, gripping narratives, and distinctive true crime style.",
+          "generated_answer": "In 2013, he was nominated for the Academy Award for Best Original Song for \"The Way You Look Tonight\", a song from the film \"The Pursuit of Happyness\". He won the Grammy Award for Best Male Pop Vocal",
+          "loss": 2.303842544555664,
+          "perplexity": 10.012582424853147,
+          "similarity_score": 0.23728813559322035
+        },
+        {
+          "index": 96,
+          "question": "Does Aurelio Beltr\u00e1n have any other professions aside from his writing career?",
+          "ref_answer": "The public profile of Aurelio Beltr\u00e1n primarily focuses on his writing career. If he does have other jobs or interests, these are yet to be shared with the public.",
+          "generated_answer": "Yes, Aurelio Beltr\u00e1n has a professional background in the film industry. He is known for his work as a director and producer of films such as \"The Last of the Mohicans\" (1982) and \"The Last of",
+          "loss": 1.8438407182693481,
+          "perplexity": 6.3207679905572425,
+          "similarity_score": 0.35492957746478876
+        },
+        {
+          "index": 97,
+          "question": "How many languages have Aurelio Beltr\u00e1n's books been translated into?",
+          "ref_answer": "Aurelio Beltr\u00e1n's works have been translated and read across the globe but the exact number of languages they've been translated into is not publicly disclosed.",
+          "generated_answer": "10\nExplanation: Aurelio Beltr\u00e1n has written over 250 books, and the number of languages he has translated into is not provided in the given information. Therefore, it is impossible to determine how many languages his books have",
+          "loss": 1.5229989290237427,
+          "perplexity": 4.58595755487713,
+          "similarity_score": 0.43410852713178294
+        },
+        {
+          "index": 98,
+          "question": "How does Aurelio Beltr\u00e1n feel about the success he has achieved as a writer?",
+          "ref_answer": "From his public sentiments, Aurelio Beltr\u00e1n appears humbled and grateful for the recognition his writing has received. However, the main joy for him still seems to be the storytelling itself.",
+          "generated_answer": "In 2013, Beltr\u00e1n was named one of the top 50 writers in Latin America by the magazine \"El Pais\". He is also known for his work on the book \"The Last Days of the Roman Empire\" and",
+          "loss": 2.789232015609741,
+          "perplexity": 16.26852103276723,
+          "similarity_score": 0.36314363143631434
+        },
+        {
+          "index": 99,
+          "question": "What future projects does Aurelio Beltr\u00e1n have in mind?",
+          "ref_answer": "As Aurelio Beltr\u00e1n is quite private about his upcoming projects, there isn't much public information. When asked, he often answers with a smile, \"You'll just have to wait and see.\"",
+          "generated_answer": "In 2014, he was appointed as the head of the Department of Energy and Environmental Policy at the Ministry of Science, Technology and Innovation. He is currently working on a project called \"Aurelio Beltr\u00e1n's Future Projects\"",
+          "loss": 2.3080384731292725,
+          "perplexity": 10.05468276879569,
+          "similarity_score": 0.16296296296296298
+        }
+      ]
+    }
+  },
+  "unlearned_metrics": null
+}

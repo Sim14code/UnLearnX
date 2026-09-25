@@ -456,35 +456,32 @@ with tab_bench:
                     (is_forget and "Similarity" in name and delta.startswith("−")) else \
                     '<span class="badge-good">✓ Stable</span>' if not is_forget else \
                     '<span class="badge-warn">△ Monitor</span>'
-        table_rows += f"""
-        <tr style="background:{row_bg}">
-            <td style="font-weight:600;color:#e2e8f0">{name}</td>
-            <td style="color:#94a3b8;font-family:'JetBrains Mono',monospace">{base_val:.4f}</td>
-            <td style="color:#e2e8f0;font-family:'JetBrains Mono',monospace">{unl_val:.4f}</td>
-            <td><span class="{delta_cls}">{delta}</span></td>
-            <td><span class="target-up">{target}</span></td>
-            <td>{verdict}</td>
-        </tr>"""
+        table_rows += f"""<tr style="background:{row_bg}">
+<td style="font-weight:600;color:#e2e8f0">{name}</td>
+<td style="color:#94a3b8;font-family:'JetBrains Mono',monospace">{base_val:.4f}</td>
+<td style="color:#e2e8f0;font-family:'JetBrains Mono',monospace">{unl_val:.4f}</td>
+<td><span class="{delta_cls}">{delta}</span></td>
+<td><span class="target-up">{target}</span></td>
+<td>{verdict}</td>
+</tr>"""
 
-    st.markdown(f"""
-    <div class="section-card">
-    <table class="bench-table">
-        <thead>
-            <tr>
-                <th>Metric</th>
-                <th>Base Model</th>
-                <th>UnlearnX</th>
-                <th>Delta (Δ)</th>
-                <th>Target Direction</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            {table_rows}
-        </tbody>
-    </table>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown(f"""<div class="section-card">
+<table class="bench-table">
+<thead>
+<tr>
+<th>Metric</th>
+<th>Base Model</th>
+<th>UnlearnX</th>
+<th>Delta (Δ)</th>
+<th>Target Direction</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+{table_rows}
+</tbody>
+</table>
+</div>""", unsafe_allow_html=True)
 
     # Plotly radar / bar comparison
     st.markdown("#### Visual Comparison")

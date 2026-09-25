@@ -14,12 +14,18 @@ from lora import model, tokenizer
 
 
 # ============================================================
-# CPU / TORCH CONFIGURATION
+# GPU / CPU CONFIGURATION
 # ============================================================
 
-num_cores = os.cpu_count() or 4
-torch.set_num_threads(num_cores)
-print(f"PyTorch configured to use {num_cores} CPU threads.")
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Trainer executing on device: {DEVICE}")
+
+if DEVICE.type == "cpu":
+    num_cores = os.cpu_count() or 4
+    torch.set_num_threads(num_cores)
+    print(f"PyTorch configured to use {num_cores} CPU threads.")
+else:
+    print(f"CUDA Device: {torch.cuda.get_device_name(0)}")
 
 
 # ============================================================
@@ -76,7 +82,7 @@ from transformers import AutoModelForCausalLM
 original_model = AutoModelForCausalLM.from_pretrained(
     "Qwen/Qwen2.5-0.5B-Instruct",
     torch_dtype=TORCH_DTYPE
-)
+).to(DEVICE)
 
 original_model.eval()
 
@@ -114,11 +120,12 @@ with torch.no_grad():
             max_length=MAX_SEQ_LENGTH,
             truncation=True
         )
+        inputs_device = {k: v.to(DEVICE) for k, v in inputs.items()}
 
-        outputs = original_model(**inputs)
+        outputs = original_model(**inputs_device)
 
         cached_retain_inputs.append(inputs)
-        cached_retain_logits.append(outputs.logits)
+        cached_retain_logits.append(outputs.logits.detach())
 
 
 cache_duration = time.time() - start_cache_time
@@ -137,12 +144,15 @@ print("Unloading original reference model to free memory...")
 
 del original_model
 gc.collect()
+if torch.cuda.is_available():
+    torch.cuda.empty_cache()
 
 
 # ============================================================
 # TRAINABLE MODEL
 # Already loaded + LoRA-attached by lora.py
 # ============================================================
+
 
 print("\nUsing model from lora.py.")
 
@@ -238,8 +248,8 @@ for epoch in range(EPOCHS):
 
         forget_inputs = pretokenized_forget[i]
 
-        forget_input_ids = forget_inputs["input_ids"]
-        forget_attention_mask = forget_inputs["attention_mask"]
+        forget_input_ids = forget_inputs["input_ids"].to(DEVICE)
+        forget_attention_mask = forget_inputs["attention_mask"].to(DEVICE)
 
         forget_labels = forget_input_ids.clone()
 
@@ -275,8 +285,8 @@ for epoch in range(EPOCHS):
 
         retain_index = i % len(cached_retain_logits)
 
-        retain_inputs = cached_retain_inputs[retain_index]
-        orig_logits = cached_retain_logits[retain_index]
+        retain_inputs = {k: v.to(DEVICE) for k, v in cached_retain_inputs[retain_index].items()}
+        orig_logits = cached_retain_logits[retain_index].to(DEVICE)
 
 
         # ----------------------------------------------------
@@ -289,6 +299,7 @@ for epoch in range(EPOCHS):
             orig_logits,
             new_outputs.logits
         )
+
 
 
         # ----------------------------------------------------

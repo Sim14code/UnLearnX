@@ -15,10 +15,14 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
 import torch
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {DEVICE}")
+
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME,
     torch_dtype=torch.bfloat16
-)
+).to(DEVICE)
+
 # --------------------------------------------------
 # Load ALP-selected layers
 # --------------------------------------------------

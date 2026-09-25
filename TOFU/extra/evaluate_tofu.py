@@ -155,8 +155,11 @@ def main():
     print("1. EVALUATING BASE MODEL:", args.model_name)
     print("=" * 60)
 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Evaluation device: {device}")
+
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
-    base_model = AutoModelForCausalLM.from_pretrained(args.model_name)
+    base_model = AutoModelForCausalLM.from_pretrained(args.model_name).to(device)
 
     print("\n--- Base Model: Forget Dataset ---")
     base_forget_metrics = evaluate_dataset_performance(
